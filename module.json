@@ -19,7 +19,7 @@
 	"compatability": {
 		"minimum": "10.291",
 		"verified": "10.291",
-		"maximum": 10
+		"maximum": "10.291"
 	},
 	"languages": [
 		{
@@ -37,7 +37,7 @@
 				"manifest": "https://github.com/foundryvtt/pf2e/releases/download/latest/system.json",
 				"compatibility": {
 					"minimum": "4.3.0",
-					"verified": "4.8.0"
+					"verified": "4.10.4"
 				}
 			}
 		]
