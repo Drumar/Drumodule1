@@ -15,7 +15,7 @@
 		}
 	],
 	"version": "#{VERSION}#",
-	"manifestPlusVersion": "1.2.0",
+	"manifestPlusVersion": "1.2.1",
 	"compatability": {
 		"minimum": "10.291",
 		"verified": "10.291",
@@ -37,7 +37,7 @@
 				"manifest": "https://github.com/foundryvtt/pf2e/releases/download/latest/system.json",
 				"compatibility": {
 					"minimum": "4.3.0",
-					"verified": "4.10.4"
+					"verified": "4.12.9"
 				}
 			}
 		]
