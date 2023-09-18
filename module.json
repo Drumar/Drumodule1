@@ -1,11 +1,11 @@
 {   
-	"name": "bl-homebrew", 
-	"id": "bl-homebrew",
-	"title": "Blood Lords Homebrew items",
-	"url": "#{URL}#",
-	"manifest": "#{MANIFEST}#",
-	"download": "#{DOWNLOAD}#",
-	"description": "A module for homebrew items and other stuff in the Blood Lords adventure",
+	"name": "Drumodule1", 
+	"id": "Drumodule1",
+	"title": "Drumar's Little Modifications",
+	"url": "https://github.com/Drumar/Drumodule1",
+	"manifest": "https://github.com/Drumar/Drumodule1/releases/latest/download/module.json",
+	"download": "https://github.com/Drumar/Drumodule1/releases/download/1.3.1/module.zip",
+	"description": "A module for homebrew items and other stuff we found practical to keep.",
 	"authors": [
 		{
 			"name": "Michiel Lange",
@@ -14,12 +14,11 @@
 			"flags": {}
 		}
 	],
-	"version": "#{VERSION}#",
-	"manifestPlusVersion": "1.2.1",
+	"version": "1.4.0",
 	"compatability": {
-		"minimum": "10.291",
-		"verified": "10.291",
-		"maximum": "10.291"
+		"minimum": "10",
+		"verified": "11",
+		"maximum": "11"
 	},
 	"languages": [
 		{
@@ -37,7 +36,7 @@
 				"manifest": "https://github.com/foundryvtt/pf2e/releases/download/latest/system.json",
 				"compatibility": {
 					"minimum": "4.3.0",
-					"verified": "4.12.9"
+					"verified": "5.0.8"
 				}
 			}
 		]
@@ -45,19 +44,19 @@
 	"packs": [
 		{
 			"name"  : "items",
-			"label" : "Bloodlords Homebrew Items",
+			"label" : "Drumar's Little Items",
 			"path"  : "packs/items.db",
 			"system": "pf2e",
 			"type"  : "Item",
-			"module": "bl-homebrew"
+			"module": "Drumodule1"
 		},
 		{
 			"name"  : "macros",
-			"label" : "Saved Macros (Michiel)",
+			"label" : "Drumar's Saved Macros",
 			"path"  : "packs/saved_macros.db",
 			"system": "pf2e",
 			"type"  : "Macro",
-			"module": "bl-homebrew"
+			"module": "Drumodule1"
 		}
 	]
 }
