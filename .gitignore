@@ -1,0 +1,6 @@
+scripts/.*
+*,tar
+*.gz
+*.bz2
+*.xz
+

@@ -1,14 +1,16 @@
 if ( canvas.tokens.controlled.length !== 1 ) { return ui.notifications.info("Please select 1 token") }
 if ( game.user.targets.size !== 1 ) { return ui.notifications.info("Please select 1 target for Hunted Shot") }
 
-if ( !token.actor.itemTypes.action.some( f => f.slug === "hunted-shot") && !token.actor.itemTypes.feat.some(f => f.slug === "hunted-shot" ) ) { return ui.notifications.warn(`${token.name} does not have Hunted Shot!`) }
+if ( !token.actor.itemTypes.action.some(f => f.slug === "hunted-shot")
+    && !token.actor.itemTypes.feat.some(f => f.slug === "hunted-shot") ) {
+    return ui.notifications.warn(`${token.name} does not have Hunted Shot!`)
+}
 
 const DamageRoll = CONFIG.Dice.rolls.find( r => r.name === "DamageRoll" );
 const critRule = game.settings.get("pf2e", "critRule");
 
 /* requires a ranged weapon with reload 0 */
-let weapons = =token.actor.system.actions.filter(h=>h.visible && h.item.system.range > 0 && h.item.system.reload.value == 0)
-
+let weapons = token.actor.system.actions.filter(h=>h.visible && h.item.system.range > 0 && h.item.system.reload.value == 0)
 let wtcf = '';
 for ( const w of weapons ) {
     wtcf += `<option value=${w.item.id}>${w.item.name}</option>`
@@ -90,8 +92,8 @@ if ( cWeapon === undefined ) { return; }
 const primary = weapons.find( w => w.item.id === cWeapon[0] );
 const secondary = weapons.find( w => w.item.id === cWeapon[1] );
 
-let options = token.actor.itemTypes.feat.some(s => s.slug === "stunning-fist") ? ["stunning-fist"] : [];
-
+//let options = token.actor.itemTypes.feat.some(s => s.slug === "stunning-fist") ? ["stunning-fist"] : [];
+let options = [];
 
 const cM = [];
 function PD(cm) {
@@ -104,7 +106,6 @@ function PD(cm) {
 }
 
 Hooks.on('preCreateChatMessage', PD);
-
 
 const pdos = bypass ? dos[0] : (await primary.variants[map].roll({skipDialog:true, event })).degreeOfSuccess;
 
@@ -128,7 +129,6 @@ if ( sdos <= 1 ) {
         return;
     } 
 }
-
 if ( pdos <= 1 ) { 
     if ( sdos === 2) {
         await secondary.damage({event,options});
@@ -145,15 +145,14 @@ await new Promise( (resolve) => {
 });
 
 if ( pdos <=0 && sdos <= 1 ) { return }
-
 else {    
     const terms = pd.terms[0].terms.concat(sd.terms[0].terms);
     const type = pd.terms[0].rolls.map(t => t.type).concat(sd.terms[0].rolls.map(t => t.type));
     const persistent = pd.terms[0].rolls.map(t => t.persistent).concat(sd.terms[0].rolls.map(t => t.persistent));
-    
     let preCombinedDamage = [];
     let combinedDamage = '{';
     let i = 0;
+
     for ( const t of terms ) {
         if ( persistent[i] && !preCombinedDamage.find( p => p.persistent && p.terms.includes(t) ) ) {
             preCombinedDamage.push({ terms: [t], type: type[i], persistent: persistent[i] });
@@ -191,12 +190,17 @@ else {
     }
     
     combinedDamage += "}";
-    
+
     const rolls = [await new DamageRoll(combinedDamage).evaluate({ async: true })]
-    let flavor = `<strong>Flurry of Blows Total Damage</strong>`;
+    let flavor = `<strong>Hunted Shot Total Damage</strong>`;
     const color = (pdos || sdos) === 2 ? `<span style="color:rgb(0, 0, 255)">Success</span>` : `<span style="color:rgb(0, 128, 0)">Critical Success</span>`
-    if ( cM.length === 1 ) { flavor += `<p>Same Weapon (${color})<hr>${cM[0].flavor}</p><hr>`; }
-    else { flavor += `<hr>${cM[0].flavor}<hr>${cM[1].flavor}`; }
+
+    if ( cM.length === 1 ) {
+        flavor += `<p>Same Weapon (${color})<hr>${cM[0].flavor}</p><hr>`;
+    }
+    else {
+        flavor += `<hr>${cM[0].flavor}<hr>${cM[1].flavor}`;
+    }
     if ( pdos === 3 || sdos === 3 ) {
         flavor += `<hr><strong>TOP DAMAGE USED FOR CREATURES IMMUNE TO CRITICALS`;
         if ( critRule === "doubledamage" ) {
@@ -230,10 +234,9 @@ else {
                             continue;
                         }
                     }
-                }
-                else {
-                toJoinVAlues.push(sv);
-                continue;
+                } else {
+                    toJoinVAlues.push(sv);
+                    continue;
                 }
             }
             rolls.unshift(await new DamageRoll(`{${toJoinVAlues.join(" ")}}`).evaluate( {async: true} ));
@@ -242,7 +245,9 @@ else {
     if ( cM.length === 1) {
         options = cM[0].flags.pf2e.context.options;
     }
-    else { options = [...new Set(cM[0].flags.pf2e.context.options.concat(cM[1].flags.pf2e.context.options))]; }
+    else {
+        options = [...new Set(cM[0].flags.pf2e.context.options.concat(cM[1].flags.pf2e.context.options))];
+    }
 
     await ChatMessage.create({
         flags: { 

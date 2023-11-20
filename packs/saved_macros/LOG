@@ -1,3 +1,8 @@
-2023/09/18-13:29:13.415996 7f27f2ffd640 Recovering log #109
-2023/09/18-13:29:13.448128 7f27f2ffd640 Delete type=3 #108
-2023/09/18-13:29:13.448143 7f27f2ffd640 Delete type=0 #109
+2023/11/17-11:21:59.604341 ffff9dfbf0a0 Recovering log #198
+2023/11/17-11:21:59.609124 ffff9dfbf0a0 Delete type=3 #196
+2023/11/17-11:21:59.609148 ffff9dfbf0a0 Delete type=0 #198
+2023/11/17-23:03:20.305443 fffe7d8920a0 Level-0 table #203: started
+2023/11/17-23:03:20.308756 fffe7d8920a0 Level-0 table #203: 59994 bytes OK
+2023/11/17-23:03:20.310359 fffe7d8920a0 Delete type=0 #201
+2023/11/17-23:03:20.316290 fffe7d8920a0 Manual compaction at level-0 from '!macros!9oUPH6biUeg8h05r' @ 72057594037927935 : 1 .. '!macros!wDdOZeyopCHr0pPm' @ 0 : 0; will stop at (end)
+2023/11/17-23:03:20.320196 fffe7d8920a0 Manual compaction at level-1 from '!macros!9oUPH6biUeg8h05r' @ 72057594037927935 : 1 .. '!macros!wDdOZeyopCHr0pPm' @ 0 : 0; will stop at (end)

@@ -1,62 +1,66 @@
-{   
-	"name": "Drumodule1", 
-	"id": "Drumodule1",
-	"title": "Drumar's Little Modifications",
-	"url": "https://github.com/Drumar/Drumodule1",
-	"manifest": "https://github.com/Drumar/Drumodule1/releases/latest/download/module.json",
-	"download": "https://github.com/Drumar/Drumodule1/releases/latest/download/module.zip",
-	"description": "A module for homebrew items and other stuff we found practical to keep.",
-	"authors": [
-		{
-			"name": "Michiel Lange",
-			"email": "mdglange+foundry@gmail.com",
-			"discord": "Drumar#9438",
-			"flags": {}
-		}
-	],
-	"version": "1.4.4",
-	"compatability": {
-		"minimum": "10",
-		"verified": "11",
-		"maximum": "11"
-	},
-	"languages": [
-		{
-			"lang": "en",
-			"name": "English",
-			"path": "language/en.json",
-			"flags": {}
-		}
-	],
-	"relationships": {
-		"systems": [
-			{
-				"id": "pf2e",
-				"type": "system",
-				"manifest": "https://github.com/foundryvtt/pf2e/releases/download/latest/system.json",
-				"compatibility": {
-					"minimum": "4.3.0",
-					"verified": "5.0.8"
-				}
-			}
-		]
-	},
-	"packs": [
-		{
-			"name"  : "items",
-			"label" : "Drumar's Little Items",
-			"path"  : "packs/items.db",
-			"system": "pf2e",
-			"type"  : "Item",
-			"module": "Drumodule1"
-		},
-		{
-			"name"  : "macros",
-			"label" : "Drumar's Saved Macros",
-			"path"  : "packs/saved_macros.db",
-			"system": "pf2e",
-			"type"  : "Macro",
-			"module": "Drumodule1"
-		}
-	]
+{
+  "id": "Drumodule1",
+  "title": "Drumar's Little Modifications",
+  "url": "https://github.com/Drumar/Drumodule1",
+  "manifest": "https://github.com/Drumar/Drumodule1/releases/latest/download/module.json",
+  "download": "https://github.com/Drumar/Drumodule1/releases/latest/download/module.zip",
+  "description": "A module for homebrew items and other stuff we found practical to keep.",
+  "authors": [
+    {
+      "name": "Michiel Lange",
+      "email": "mdglange+foundry@gmail.com",
+      "discord": "Drumar#9438"
+    }
+  ],
+  "version": "1.4.7",
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "language/en.json",
+      "flags": {}
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "pf2e",
+        "type": "system",
+        "manifest": "https://github.com/foundryvtt/pf2e/releases/download/latest/system.json",
+        "compatibility": {
+          "minimum": "4.3.0",
+          "verified": "5.9.2"
+        }
+      }
+    ]
+  },
+  "packs": [
+    {
+      "name": "items",
+      "label": "Drumar's Little Items",
+      "path": "packs/items",
+      "type": "Item",
+      "system": "pf2e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "macros",
+      "label": "Drumar's Saved Macros",
+      "path": "packs/saved_macros",
+      "type": "Macro",
+      "system": "pf2e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11",
+    "maximum": "11.315"
+  }
 }
