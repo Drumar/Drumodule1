@@ -1,3 +1,23 @@
-2023/11/21-17:40:42.230773 ffffa7fff0a0 Recovering log #211
-2023/11/21-17:40:42.239999 ffffa7fff0a0 Delete type=3 #209
-2023/11/21-17:40:42.240025 ffffa7fff0a0 Delete type=0 #211
+2023/11/22-16:46:59.196115 ffffa4f9f0a0 Recovering log #214
+2023/11/22-16:46:59.196170 ffffa4f9f0a0 Level-0 table #216: started
+2023/11/22-16:46:59.198426 ffffa4f9f0a0 Level-0 table #216: 4289 bytes OK
+2023/11/22-16:46:59.202945 ffffa4f9f0a0 Delete type=0 #214
+2023/11/22-16:46:59.202991 ffffa4f9f0a0 Delete type=3 #213
+2023/11/22-16:47:15.150512 fffe83e090a0 Level-0 table #219: started
+2023/11/22-16:47:15.150530 fffe83e090a0 Level-0 table #219: 0 bytes OK
+2023/11/22-16:47:15.152189 fffe83e090a0 Delete type=0 #217
+2023/11/22-16:47:15.163697 fffe83e090a0 Manual compaction at level-0 from '!folders!Wl6jVmX3z6Hcvo0Z' @ 72057594037927935 : 1 .. '!items!rgwv4NviUfiHxMOi' @ 0 : 0; will stop at '!items!rgwv4NviUfiHxMOi' @ 225 : 1
+2023/11/22-16:47:15.163704 fffe83e090a0 Compacting 1@0 + 0@1 files
+2023/11/22-16:47:15.165707 fffe83e090a0 Generated table #220@0: 5 keys, 3454 bytes
+2023/11/22-16:47:15.165718 fffe83e090a0 Compacted 1@0 + 0@1 files => 3454 bytes
+2023/11/22-16:47:15.167150 fffe83e090a0 compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/11/22-16:47:15.167212 fffe83e090a0 Delete type=2 #216
+2023/11/22-16:47:15.171221 fffe83e090a0 Manual compaction at level-0 from '!items!rgwv4NviUfiHxMOi' @ 225 : 1 .. '!items!rgwv4NviUfiHxMOi' @ 0 : 0; will stop at (end)
+2023/11/22-16:47:15.173155 fffe83e090a0 Manual compaction at level-1 from '!folders!Wl6jVmX3z6Hcvo0Z' @ 72057594037927935 : 1 .. '!items!rgwv4NviUfiHxMOi' @ 0 : 0; will stop at '!items!rgwv4NviUfiHxMOi' @ 225 : 1
+2023/11/22-16:47:15.173162 fffe83e090a0 Compacting 1@1 + 1@2 files
+2023/11/22-16:47:15.175469 fffe83e090a0 Generated table #221@1: 16 keys, 14122 bytes
+2023/11/22-16:47:15.175480 fffe83e090a0 Compacted 1@1 + 1@2 files => 14122 bytes
+2023/11/22-16:47:15.176915 fffe83e090a0 compacted to: files[ 0 0 1 0 0 0 0 ]
+2023/11/22-16:47:15.176964 fffe83e090a0 Delete type=2 #220
+2023/11/22-16:47:15.177011 fffe83e090a0 Delete type=2 #120
+2023/11/22-16:47:15.182627 fffe83e090a0 Manual compaction at level-1 from '!items!rgwv4NviUfiHxMOi' @ 225 : 1 .. '!items!rgwv4NviUfiHxMOi' @ 0 : 0; will stop at (end)
