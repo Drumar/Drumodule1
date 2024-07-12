@@ -9,10 +9,11 @@
     {
       "name": "Michiel Lange",
       "email": "mdglange+foundry@gmail.com",
-      "discord": "Drumar#9438"
+      "discord": "Drumar#9438",
+      "flags": {}
     }
   ],
-  "version": "1.4.10",
+  "version": "1.4.11",
   "languages": [
     {
       "lang": "en",
@@ -26,11 +27,7 @@
       {
         "id": "pf2e",
         "type": "system",
-        "manifest": "https://github.com/foundryvtt/pf2e/releases/download/latest/system.json",
-        "compatibility": {
-          "minimum": "4.3.0",
-          "verified": "5.9.2"
-        }
+        "compatibility": {}
       }
     ]
   },
@@ -60,7 +57,7 @@
   ],
   "compatibility": {
     "minimum": "11",
-    "verified": "11",
-    "maximum": "11.315"
+    "verified": "12.328",
+    "maximum": "12.999"
   }
 }
